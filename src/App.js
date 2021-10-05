@@ -11,7 +11,6 @@ import './App.css'
 const App = () => {
   const [homeData, setHomeData] = useState()
   const [featuredMovie, setFeaturedMovie] = useState()
-  const [headerBackground, setHeaderBackground] = useState(false)
 
   useEffect(() => {
     const fetchAndLoad = async () => {
@@ -29,25 +28,9 @@ const App = () => {
     fetchAndLoad()
   }, [])
 
-  useEffect(() => {
-    const scrollListener = () => {
-      if (window.scrollY > 15) {
-        setHeaderBackground(true)
-      } else {
-        setHeaderBackground(false)
-      }
-    }
-
-    window.addEventListener('scroll', scrollListener)
-
-    return () => {
-      window.removeEventListener('scroll', scrollListener)
-    }
-  })
-
   return (
     <div className="page">
-      <Header background={headerBackground} />
+      <Header />
 
       {featuredMovie &&
         <FeaturedMovie movie={featuredMovie}/>
