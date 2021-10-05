@@ -9,10 +9,11 @@
 .movierow--listarea {
     overflow-x: hidden;
     padding-left: 30px;
+    padding-right: 30px;
 }
 
 .movierow--list {
-    width: 99999px;
+    transition: all ease 0.5s;
 }
 
 .movierow--item {
@@ -29,4 +30,41 @@
 
 .movierow--item img:hover {
     transform: scale(1);
+}
+
+.movierow--previous,
+.movierow--next {
+    position: absolute;
+    width: 40px;
+    height: 225px;
+    background-color: rgba(20, 20, 20, 0.6);
+    z-index: 99;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    opacity: 0;
+    transition: all ease 0.5s;
+    cursor: pointer;
+    border-radius: 5px 0 0 5px;
+}
+
+.movierow--previous {
+    left: 0;
+}
+
+.movierow--next {
+    right: 0;
+}
+
+.movierow:hover .movierow--previous,
+.movierow:hover .movierow--next {
+    opacity: 1;
+}
+
+@media (max-width: 760px) {
+    .movierow--previous,
+    .movierow--next {
+        opacity: 1;
+    }
 }

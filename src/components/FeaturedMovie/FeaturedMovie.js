@@ -32,16 +32,19 @@ const FeaturedMovie = ({movie}) => {
                         </div>
 
                         <div className="featured--seasons">
-                            {movie.number_of_seasons} temporadas
+                            {movie.number_of_seasons} temporada{movie.number_of_seasons > 1 ? 's' : ''}
                         </div>
                     </div>
 
                     <div className="featured--description">
                         {movie.overview}
                     </div>
-                    <div className="featured--buttons">
 
+                    <div className="featured--buttons">
+                        <a href={`/watch/${movie.id}`} className="featured--watchbutton">▶ Assistir</a>
+                        <a href={`/list/add/${movie.id}`} className="featured--listbutton">+ Minha Lista</a>
                     </div>
+
                     <div className="featured--genres">
                         <strong>Gêneros: </strong>{genres.join(', ')}
                     </div>
