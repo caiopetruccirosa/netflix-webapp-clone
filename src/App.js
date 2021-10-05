@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 
-import Header from "./components/Header/Header";
-import MovieLists from "./components/MovieLists/MovieLists"
-import FeaturedMovie from "./components/FeaturedMovie/FeaturedMovie";
+import Header from "./components/Header";
+import MovieLists from "./components/MovieLists"
+import FeaturedMovie from "./components/FeaturedMovie";
 
-import Tmdb from "./services/Tmdb/Tmdb";
+import Tmdb from "./services/Tmdb";
 
 import './App.css'
 

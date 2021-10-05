@@ -1,4 +1,4 @@
-import MovieRow from "../MovieRow/MovieRow"
+import MovieRow from "../MovieRow"
 
 import './MovieLists.css'
 
